@@ -23,11 +23,11 @@ public class UserService {
   public User create(UserDto userDto) {
     if (!userRepository.existsByUsername(userDto.username()))
 
-    return userRepository.save(User.builder()
-      .email(userDto.email())
-      .username(userDto.username())
-      .orderList(Collections.emptyList())
-      .build());
+      return userRepository.save(User.builder()
+        .email(userDto.email())
+        .username(userDto.username())
+        .orderList(Collections.emptyList())
+        .build());
 
 
     else throw new RuntimeException("User not found with username'" + userDto.username() + "'");
