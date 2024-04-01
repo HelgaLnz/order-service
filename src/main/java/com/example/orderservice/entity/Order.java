@@ -31,7 +31,7 @@ public class Order {
   @JsonManagedReference
   private User user;
 
-  public enum StatusOrder{
+  public enum StatusOrder {
     CREATED,
     PROCESSED,
     REJECTED,
