@@ -45,9 +45,10 @@ public class UserService {
     if (!userRepository.existsByUsername(userDto.username())) {
 
       return userRepository.findById(id)
-        .map(category -> {
-          category.setUsername(userDto.username());
-          return userRepository.save(category);
+        .map(user -> {
+          user.setUsername(userDto.username());
+          user.setEmail(userDto.email());
+          return userRepository.save(user);
         }).orElse(User.builder()
           .username(userDto.username())
           .build()
